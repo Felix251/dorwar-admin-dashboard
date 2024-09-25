@@ -43,6 +43,8 @@ import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
 import gradientLineChartData from "layouts/dashboard/data/gradientLineChartData";
 // import pieChartData from "layouts/dashboard/data/PieChartData"
 import PieChart from "examples/Charts/PieChart";
+import { heatMapData } from "./components/Geomap/data";
+import HeatMapWrapper from "./components/Geomap/HeatMapWrapper";
 
 function Dashboard() {
   const { size } = typography;
@@ -188,6 +190,15 @@ function Dashboard() {
             </Grid>
           </Grid>
         </SoftBox>
+        <Grid mb={3} container spacing={3}>
+          <Grid item xs={12} md={6} lg={8}>
+          <HeatMapWrapper points={heatMapData} />
+          </Grid>
+          <Grid item xs={12} md={6} lg={4}>
+            <OrderOverview />
+          </Grid>
+        </Grid>
+       
       </SoftBox>
       <Footer />
     </DashboardLayout>

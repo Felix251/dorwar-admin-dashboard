@@ -47,15 +47,14 @@ export default function data() {
 
   return {
     columns: [
-      { name: "companies", align: "left" },
-      { name: "members", align: "left" },
-      { name: "budget", align: "center" },
-      { name: "completion", align: "center" },
+      { name: "secteurs", align: "left" },
+      { name: "travailleur", align: "center" },
+      { name: "demande_offre", align: "center" },
     ],
 
     rows: [
       {
-        companies: [logoXD, "Soft UI XD Version"],
+        secteurs: [null, "Energie"],
         members: (
           <SoftBox display="flex" py={1}>
             {avatars([
@@ -66,19 +65,19 @@ export default function data() {
             ])}
           </SoftBox>
         ),
-        budget: (
+        travailleur: (
           <SoftTypography variant="caption" color="text" fontWeight="medium">
-            $14,000
+            14,000
           </SoftTypography>
         ),
-        completion: (
+        demande_offre: (
           <SoftBox width="8rem" textAlign="left">
             <SoftProgress value={60} color="info" variant="gradient" label={false} />
           </SoftBox>
         ),
       },
       {
-        companies: [logoAtlassian, "Add Progress Track"],
+        secteurs: [null, "Médical & Pharmaceutique"],
         members: (
           <SoftBox display="flex" py={1}>
             {avatars([
@@ -87,19 +86,19 @@ export default function data() {
             ])}
           </SoftBox>
         ),
-        budget: (
+        travailleur: (
           <SoftTypography variant="caption" color="text" fontWeight="medium">
-            $3,000
+            55,000
           </SoftTypography>
         ),
-        completion: (
+        demande_offre: (
           <SoftBox width="8rem" textAlign="left">
             <SoftProgress value={10} color="info" variant="gradient" label={false} />
           </SoftBox>
         ),
       },
       {
-        companies: [logoSlack, "Fix Platform Errors"],
+        secteurs: [null, "Pétrole et gaz"],
         members: (
           <SoftBox display="flex" py={1}>
             {avatars([
@@ -108,19 +107,19 @@ export default function data() {
             ])}
           </SoftBox>
         ),
-        budget: (
+        travailleur: (
           <SoftTypography variant="caption" color="text" fontWeight="medium">
             Not set
           </SoftTypography>
         ),
-        completion: (
+        demande_offre: (
           <SoftBox width="8rem" textAlign="left">
             <SoftProgress value={100} color="success" variant="gradient" label={false} />
           </SoftBox>
         ),
       },
       {
-        companies: [logoSpotify, "Launch our Mobile App"],
+        secteurs: [null, "Tourisme"],
         members: (
           <SoftBox display="flex" py={1}>
             {avatars([
@@ -131,37 +130,37 @@ export default function data() {
             ])}
           </SoftBox>
         ),
-        budget: (
+        travailleur: (
           <SoftTypography variant="caption" color="text" fontWeight="medium">
-            $20,500
+            500,500
           </SoftTypography>
         ),
-        completion: (
+        demande_offre: (
           <SoftBox width="8rem" textAlign="left">
             <SoftProgress value={100} color="success" variant="gradient" label={false} />
           </SoftBox>
         ),
       },
       {
-        companies: [logoJira, "Add the New Pricing Page"],
+        secteurs: [null, "Technologies de l’information et de la communication"],
         members: (
           <SoftBox display="flex" py={1}>
             {avatars([[team4, "Jessica Doe"]])}
           </SoftBox>
         ),
-        budget: (
+        travailleur: (
           <SoftTypography variant="caption" color="text" fontWeight="medium">
-            $500
+            13000
           </SoftTypography>
         ),
-        completion: (
+        demande_offre: (
           <SoftBox width="8rem" textAlign="left">
             <SoftProgress value={25} color="info" variant="gradient" label={false} />
           </SoftBox>
         ),
       },
       {
-        companies: [logoInvesion, "Redesign New Online Shop"],
+        secteurs: [null, "Agro-alimentaire"],
         members: (
           <SoftBox display="flex" py={1}>
             {avatars([
@@ -170,12 +169,12 @@ export default function data() {
             ])}
           </SoftBox>
         ),
-        budget: (
+        travailleur: (
           <SoftTypography variant="caption" color="text" fontWeight="medium">
-            $2,000
+            122,000
           </SoftTypography>
         ),
-        completion: (
+        demande_offre: (
           <SoftBox width="8rem" textAlign="left">
             <SoftProgress value={40} color="info" variant="gradient" label={false} />
           </SoftBox>
