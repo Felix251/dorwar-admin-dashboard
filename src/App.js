@@ -33,6 +33,7 @@ import Configurator from "examples/Configurator";
 // Soft UI Dashboard React themes
 import theme from "assets/theme";
 import themeRTL from "assets/theme/theme-rtl";
+import brand1 from "assets/brandlogo.png";
 
 // RTL plugins
 import rtlPlugin from "stylis-plugin-rtl";
@@ -163,7 +164,7 @@ export default function App() {
         <>
           <Sidenav
             color={sidenavColor}
-            brand={brand}
+            brand={brand1}
             brandName="Dorwar"
             routes={routes}
             onMouseEnter={handleOnMouseEnter}
