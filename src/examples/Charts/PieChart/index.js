@@ -1,71 +1,79 @@
-/**
-=========================================================
-* Soft UI Dashboard React - v4.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-import { useMemo } from "react";
-
-// porp-types is a library for typechecking of props
+import React from "react";
+import ReactApexChart from "react-apexcharts";
 import PropTypes from "prop-types";
-
-// react-chartjs-2 components
-import { Pie } from "react-chartjs-2";
-
-// @mui material components
 import Card from "@mui/material/Card";
-
-// Soft UI Dashboard React components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 
-// PieChart configurations
-import configs from "examples/Charts/PieChart/configs";
+class PieChart extends React.Component {
+  constructor(props) {
+    super(props);
 
-function PieChart({ title, description, height, chart }) {
-  const { data, options } = configs(chart.labels || [], chart.datasets || {});
-  console.log("data");
-  
-  console.log(data);
-  
-  const renderChart = (
-    <SoftBox p={2}>
-      {title || description ? (
-        <SoftBox px={description ? 1 : 0} pt={description ? 1 : 0}>
+    // Assurez-vous que les données sont bien définies
+    const series = (props.chart && props.chart.datasets && props.chart.datasets[0].data) || [];
+    const labels = (props.chart && props.chart.labels) || [];
+    const backgroundColors = (props.chart.datasets[0].backgroundColor) || ["#FF6384", "#36A2EB", "#FFCE56"];
+
+    this.state = {
+      series,
+      options: {
+        chart: {
+          type: "donut",
+          width: "100%", // Adapter la largeur à 100%
+        },
+        labels, // Les labels pour les segments
+        colors: backgroundColors, // Couleurs pour chaque segment
+        responsive: [
+          {
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: 200,
+              },
+              legend: {
+                position: "bottom",
+              },
+            },
+          },
+        ],
+      },
+    };
+  }
+
+  render() {
+    const { title, description, height } = this.props;
+
+    return (
+      <Card>
+        <SoftBox p={2}>
           {title && (
             <SoftBox mb={1}>
               <SoftTypography variant="h6">{title}</SoftTypography>
             </SoftBox>
           )}
-          <SoftBox mb={2}>
-            <SoftTypography component="div" variant="button" fontWeight="regular" color="text">
-              {description}
-            </SoftTypography>
+          {description && (
+            <SoftBox mb={2}>
+              <SoftTypography component="div" variant="button" fontWeight="regular" color="text">
+                {description}
+              </SoftTypography>
+            </SoftBox>
+          )}
+          <SoftBox height={height}>
+            <ReactApexChart
+              options={this.state.options}
+              series={this.state.series}
+              type="donut" // Vous pouvez aussi utiliser "pie" pour un pie chart simple
+              height="100%"  // Adapter la hauteur à 100% du conteneur parent
+            />
           </SoftBox>
         </SoftBox>
-      ) : null}
-      {useMemo(
-        () => (
-          <SoftBox height={height}>
-            <Pie data={data} options={options} />
-          </SoftBox>
-        ),
-        [chart, height]
-      )}
-    </SoftBox>
-  );
-
-  return title || description ? <Card>{renderChart}</Card> : renderChart;
+      </Card>
+    );
+  }
 }
+
+
+
 
 // Setting default values for the props of PieChart
 PieChart.defaultProps = {

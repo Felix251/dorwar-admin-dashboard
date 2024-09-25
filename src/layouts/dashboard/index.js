@@ -48,15 +48,16 @@ function Dashboard() {
   const { size } = typography;
   const { chart, items } = reportsBarChartData;
   const pieChartData = {
-    labels: ['Segment A', 'Segment B', 'Segment C'],
+    labels: ["agriculture", "industrie", "services", "technologies", "etc.."],
     datasets: [
       {
-        label: 'My Dataset',
-        data: [30, 20, 50], // Values corresponding to each segment
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], // Optional custom colors
+        label: "My Dataset",
+        data: [30, 20, 50, 15, 10], // Ajoutez une valeur pour chaque label
+        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF"], // Couleurs personnalisées pour chaque segment
       },
     ],
-  };
+};
+  
 
   return (
     <DashboardLayout>
@@ -159,8 +160,8 @@ function Dashboard() {
           <Grid container spacing={3}>
             <Grid item xs={12} lg={5}>
             <PieChart
-        title="My Pie Chart"
-        description="This is a simple pie chart."
+        title="Répartition par secteur sur le PIB"
+        description="Une vue d'ensemble qui indique pour chaque secteurs la contribution à l’économie nationale."
         height="20rem" // Adjust height as needed
         chart={pieChartData} // Pass the pieChartData variable
       />
