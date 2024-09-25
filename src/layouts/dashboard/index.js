@@ -41,6 +41,7 @@ import OrderOverview from "layouts/dashboard/components/OrderOverview";
 // Data
 import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
 import gradientLineChartData from "layouts/dashboard/data/gradientLineChartData";
+import gradientLineChartData1 from "layouts/dashboard/data/gradientLineChartData1";
 // import pieChartData from "layouts/dashboard/data/PieChartData"
 import PieChart from "examples/Charts/PieChart";
 import { heatMapData } from "./components/Geomap/data";
@@ -118,10 +119,9 @@ function Dashboard() {
           <Grid container spacing={3}>
             <Grid item xs={12} lg={5}>
               <ReportsBarChart
-                title="PIB"
+                title="Repartition geographique"
                 description={
                   <>
-                    (<strong>+23%</strong>) than last week
                   </>
                 }
                 chart={chart}
@@ -170,7 +170,7 @@ function Dashboard() {
             </Grid>
             <Grid item xs={12} lg={7}>
               <GradientLineChart
-                title="Evolution de la demande par secteur"
+                title="Evolution de la l'offre par secteur"
                 description={
                   <SoftBox display="flex" alignItems="center">
                     <SoftBox fontSize={size.lg} color="success" mb={0.3} mr={0.5} lineHeight={0}>
@@ -185,7 +185,7 @@ function Dashboard() {
                   </SoftBox>
                 }
                 height="20.25rem"
-                chart={gradientLineChartData}
+                chart={gradientLineChartData1}
               />
             </Grid>
           </Grid>

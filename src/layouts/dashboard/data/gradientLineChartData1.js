@@ -56,4 +56,4 @@ const gradientLineChartData1 = {
 };
 
 
-export default gradientLineChartData
+export default gradientLineChartData1;
