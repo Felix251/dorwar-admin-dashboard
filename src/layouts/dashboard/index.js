@@ -161,7 +161,7 @@ function Dashboard() {
             <PieChart
         title="My Pie Chart"
         description="This is a simple pie chart."
-        height="25rem" // Adjust height as needed
+        height="20rem" // Adjust height as needed
         chart={pieChartData} // Pass the pieChartData variable
       />
             </Grid>
